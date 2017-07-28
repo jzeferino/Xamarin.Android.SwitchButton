@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Xamarin.Android.SwitchButton</id>
+    <version>$version$</version>
+    <title>Xamarin.Android.SwitchButton</title>
+    <authors>jzeferino</authors>
+    <licenseUrl>https://github.com/jzeferino/Xamarin.Android.SwitchButton/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/jzeferino/Xamarin.Android.SwitchButton</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Xamarin.Android.SwitchButton customizable switch for android.</description>    
+    <tags>xamarin, switch</tags>
+  </metadata>
+  <files>
+    <file src="Xamarin.Android.SwitchButton/bin/Release/Xamarin.Android.SwitchButton.dll" target="lib/MonoAndroid403/Xamarin.Android.SwitchButton.dll" />
+  </files>
+</package>

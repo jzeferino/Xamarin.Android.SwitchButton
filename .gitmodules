@@ -1,0 +1,3 @@
+[submodule "Android.SwitchButton"]
+	path = Android.SwitchButton
+	url = https://github.com/kyleduo/SwitchButton.git
