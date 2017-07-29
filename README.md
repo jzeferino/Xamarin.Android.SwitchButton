@@ -46,12 +46,10 @@ protected override void OnCreate(Bundle savedInstanceState)
     base.OnCreate(savedInstanceState);
 
     _switch = FindViewById<SwitchButton>(Resource.Id.sw);
-    _switch.CheckedChange += (sender, e) =>
-    {
-        var isChecked = e.IsChecked;
-    };
+    _switch.CheckedChange += (sender, e) => Toast.MakeText(this, $"isChecked {e.IsChecked}", ToastLength.Short).Show();
 }  
 ```
+Run and play with the [sample](https://github.com/jzeferino/Xamarin.Android.SwitchButton/tree/feature/sample/Xamarin.Android.SwitchButton.Sample).
 
 ### License
 [MIT Licence](LICENSE) 
