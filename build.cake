@@ -12,8 +12,8 @@ var configuration = "Release";
 var solutionFile = new FilePath("Xamarin.Android.SwitchButton.sln");
 var artifactsDirectory = new DirectoryPath("artifacts");
 
-// Versioning.
-var version = EnvironmentVariable ("APPVEYOR_BUILD_VERSION") ?? Argument("version", "9.9.9-build9");
+// Versioning. Used for all the packages and assemblies for now.
+var version = CreateSemVer(1, 4, 6);
 
 Setup((context) =>
 {
@@ -52,11 +52,14 @@ Task("Build")
 
 Task ("NuGet")
 	.IsDependentOn ("Build")
+	.WithCriteria(isRunningOnAppVeyor)
 	.Does (() =>
 	{
-		var sv = ParseSemVer (version);
-		var nugetVersion = CreateSemVer (sv.Major, sv.Minor, sv.Patch).ToString();
+		Information("Nuget version: {0}", version);
 		
+		AppVeyor.UpdateBuildVersion(string.Format("{0}-{1}-build{2}", version.ToString(), AppVeyor.Environment.Repository.Branch, AppVeyor.Environment.Build.Number));
+  		var nugetVersion = AppVeyor.Environment.Repository.Branch == "master" ? version.ToString() : version.Change(prerelease: "pre" + AppVeyor.Environment.Build.Number).ToString();
+
 		NuGetPack ("./nuspec/Xamarin.Android.SwitchButton.nuspec", 
 			new NuGetPackSettings 
 				{ 
