@@ -13,7 +13,7 @@ var solutionFile = new FilePath("Xamarin.Android.SwitchButton.sln");
 var artifactsDirectory = new DirectoryPath("artifacts");
 
 // Versioning. Used for all the packages and assemblies for now.
-var version = CreateSemVer(1, 0, 1);
+var version = CreateSemVer(1, 4, 6);
 
 Setup((context) =>
 {
@@ -52,6 +52,7 @@ Task("Build")
 
 Task ("NuGet")
 	.IsDependentOn ("Build")
+	.WithCriteria(isRunningOnAppVeyor)
 	.Does (() =>
 	{
 		Information("Nuget version: {0}", version);
