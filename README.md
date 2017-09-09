@@ -1,5 +1,6 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/ckd6fk0x95e0ot0x?svg=true
 )](https://ci.appveyor.com/project/jzeferino/xamarin-android-switchbutton)  
+[![NuGet](https://img.shields.io/nuget/v/Xamarin.Android.SwitchButton.svg?label=NuGet)](https://www.nuget.org/packages/Xamarin.Android.SwitchButton/)
 
 Xamarin.Android.SwitchButton
 ===================
